@@ -1,0 +1,30 @@
+<div class="container">
+    <h1 id="init">Harry Potter API - Slytherin</h1>
+    <label for="search" class="col-sm-2 col-form-label" style="text-align: rigth;">Search</label>
+    <div class="col-sm-6">
+      <input type="text" [(ngModel)]="searchValue" class="form-control" id="search" placeholder="enter member name to search">
+    </div>
+    <table class="table table-hover">
+  
+      <thead>
+        <tr>
+          <th (click)="sortName('name')">Member name&nbsp;<i class="fa fa-sort"></i></th>
+          <th >Blood Status</th>
+          <th >imagen</th>
+  
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let character of characters| searchfilter:searchValue | orderBy:name: reverse">
+          
+          <td >{{character.name}}</td>
+          <td > {{character.ancestry}}</td>
+          <button class="button" mat-button > View Member</button>
+        </tr>
+        <tr >
+         
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
