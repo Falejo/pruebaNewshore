@@ -27,13 +27,26 @@ export class CharactersRavenclawComponent implements OnInit {
     this.getCharactersRavenclaw();
   }
 
-
+   /**
+   * strategies sorting name
+   */
   name: string = 'name';
   reverse: boolean = false;
 
   sortName(name) {
     this.name = name;
     this.reverse = !this.reverse;
+  }
+
+  /**
+   * strategies sorting last name
+   */
+  lastName: string = '';
+  reverses: boolean = false;
+
+  sortLastName(lastName){
+    this.lastName = lastName;
+    this.reverses = !this.reverses;
   }
 
 

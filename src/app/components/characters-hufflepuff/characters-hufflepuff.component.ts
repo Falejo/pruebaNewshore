@@ -26,6 +26,9 @@ export class CharactersHufflepuffComponent implements OnInit {
     this.getCharactersHufflepuf();
   }
 
+  /**
+   * strategies sorting name
+   */
   name: string = 'name';
   reverse: boolean = false;
 
@@ -34,6 +37,16 @@ export class CharactersHufflepuffComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
+   /**
+   * strategies sorting last name
+   */
+  lastName: string = '';
+  reverses: boolean = false;
+
+  sortLastName(lastName){
+    this.lastName = lastName;
+    this.reverses = !this.reverses;
+  }
 
   getCharactersHufflepuf() {
     this.service.getDataHousesHufflepuf().subscribe(result => {

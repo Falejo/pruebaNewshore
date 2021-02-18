@@ -34,6 +34,9 @@ export class CharactersHousesComponent implements OnInit {
 
   }
 
+  /**
+   * strategies sorting name
+   */
   name: string = 'name';
   reverse: boolean = false;
 
@@ -42,7 +45,16 @@ export class CharactersHousesComponent implements OnInit {
     this.reverse = !this.reverse;
   }
 
+  /**
+   * strategies sorting last name
+   */
+  lastName: string = '';
+  reverses: boolean = false;
 
+  sortLastName(lastName){
+    this.lastName = lastName;
+    this.reverses = !this.reverses;
+  }
 
   getCharactersGryfindor() {
     this.service.getDataHousesGryffindor().subscribe(result => {
